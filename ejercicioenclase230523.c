@@ -38,5 +38,19 @@ int main() {
     
     printf("Ingrese el número de columnas de la matriz: ");
     scanf("%d", &cols);
+    
+    // Crear la matriz
+    int** matrix = (int**)malloc(rows * sizeof(int*));
+    for (int i = 0; i < rows; i++) {
+        matrix[i] = (int*)malloc(cols * sizeof(int));
+    }
+    
+    // Llenar la matriz con números aleatorios
+    fillMatrix(matrix, rows, cols);
+    
+    printf("\nMatriz original:\n");
+    printMatrix(matrix, rows, cols);
+    
+   
 
 
