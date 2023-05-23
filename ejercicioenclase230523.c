@@ -51,6 +51,32 @@ int main() {
     printf("\nMatriz original:\n");
     printMatrix(matrix, rows, cols);
     
+    // Crear la matriz transpuesta
+    int** transposed = (int**)malloc(cols * sizeof(int*));
+    for (int i = 0; i < cols; i++) {
+        transposed[i] = (int*)malloc(rows * sizeof(int));
+    }
+    
+    // Calcular la matriz transpuesta
+    transposeMatrix(matrix, transposed, rows, cols);
+    
+    printf("Matriz transpuesta:\n");
+    printMatrix(transposed, cols, rows);
+    
+    // Liberar memoria
+    for (int i = 0; i < rows; i++) {
+        free(matrix[i]);
+    }
+    free(matrix);
+    
+    for (int i = 0; i < cols; i++) {
+        free(transposed[i]);
+    }
+    free(transposed);
+    
+    return 0;
+}
+    
    
 
 
