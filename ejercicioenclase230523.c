@@ -22,4 +22,21 @@ void printMatrix(int** matrix, int rows, int cols) {
     printf("\n");
 }
 
+void transposeMatrix(int** matrix, int** transposed, int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            transposed[j][i] = matrix[i][j];  // Intercambiar filas y columnas
+        }
+    }
+}
+
+int main() {
+    int rows, cols;
+    
+    printf("Ingrese el número de filas de la matriz: ");
+    scanf("%d", &rows);
+    
+    printf("Ingrese el número de columnas de la matriz: ");
+    scanf("%d", &cols);
+
 
